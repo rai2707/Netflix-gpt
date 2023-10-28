@@ -1,3 +1,6 @@
+import { BsSearch } from 'react-icons/bs'
+import { AiOutlineHome } from 'react-icons/ai'
+import { IoMdNotificationsOutline } from 'react-icons/io'
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
@@ -59,7 +62,7 @@ const Header = () => {
       {user && (
         <div className="flex p-2">
           { showGptSearch && (<select
-            className="p-2 m-2 bg-gray-900 text-white"
+            className="p-2 m-2 bg-gray-900 bg-opacity-100 text-white"
             onChange={handleLanguageChange}
           >
             {SUPPORTED_LANGUAGES.map((lang) => (
@@ -69,14 +72,14 @@ const Header = () => {
             ))}
           </select>)}
           <button
-            className="py-2 px-4 mx-4 my-2 bg-red-700 text-white rounded-lg"
+            className="py-2 px-4 mx-4 my-2 text-2xl text-white rounded-lg"
             onClick={handleGptSearchClick}
           >
-            {showGptSearch ? "HomePage" : "GPT SEARCH"}
+            {showGptSearch ? <AiOutlineHome /> : <BsSearch />  }
           </button>
           <img className="w-12 h-12" alt="usericon" src={user?.photoURL} />
           <button onClick={handleSignOut} className="font-bold text-white">
-            (Sign Out)
+            (Shivam Rai)
           </button>
         </div>
       )}
