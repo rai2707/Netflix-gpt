@@ -22,7 +22,7 @@ const Login = () => {
 
   const handleButtonClick = () => {
     // Validate the form data
-
+    console.log("========= email",email.current.value, "password", password.current.value );
     const message = checkValidateData(
       email.current.value,
       password.current.value
@@ -93,6 +93,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
+          // className="h-screen object-cover"
           src={BG_URL}
           alt="header"
         />
@@ -100,7 +101,7 @@ const Login = () => {
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
+        className="w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
       >
         <h1 className="font-bold text-3xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
@@ -138,7 +139,7 @@ const Login = () => {
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
 
-        <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
+        <p data-testid="toggleSignInForm" className="py-4 cursor-pointer" onClick={toggleSignInForm}>
           {" "}
           {isSignInForm
             ? "New to Netflix?Sign Up Now"
