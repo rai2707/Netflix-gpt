@@ -46,6 +46,8 @@
 -Add .env file
 -Adding .env file to gitignore
 -Made our Site Responsive 
+-Hover
+-Test case by jest
 
 #Features
 -login/Signup page
